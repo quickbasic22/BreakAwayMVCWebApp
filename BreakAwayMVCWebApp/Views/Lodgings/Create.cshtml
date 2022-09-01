@@ -1,0 +1,47 @@
+﻿@model BreakAwayMVCWebApp.Models.Lodging
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Lodging</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LodgingName" class="control-label"></label>
+                <input asp-for="LodgingName" class="form-control" />
+                <span asp-validation-for="LodgingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner" class="control-label"></label>
+                <input asp-for="Owner" class="form-control" />
+                <span asp-validation-for="Owner" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsResort" /> @Html.DisplayNameFor(model => model.IsResort)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="LodgingDestinationId" class="control-label"></label>
+                <select asp-for="LodgingDestinationId" class ="form-control" asp-items="ViewBag.LodgingDestinationId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

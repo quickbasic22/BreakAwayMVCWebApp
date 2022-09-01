@@ -1,0 +1,42 @@
+﻿@model BreakAwayMVCWebApp.Models.Lodging
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Lodging</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LodgingName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LodgingName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsResort)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsResort)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LodgingDestination)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LodgingDestination.DestinationId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.LodgingId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
